@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "script": "./script.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Image Editor</h1>
+
+        <div class="input-section">
+            <div class="image-upload" id="imageUploadArea">
+                <label for="imageUpload" class="upload-button">Upload Image File</label>
+                <input type="file" id="imageUpload" accept="image/*">
+                <p class="or-separator">OR</p>
+                <input type="text" id="pasteImageUrl" placeholder="Paste image URL here">
+                <p class="or-separator">OR</p>
+                <p class="drag-paste-instruction">Drag & Drop an image here, or Paste (Ctrl+V)</p>
+                <img id="previewImage" src="#" alt="Image preview" style="display: none;">
+            </div>
+            <label for="promptInput" class="prompt-label">Describe what you want to change in the image</label>
+            <textarea id="promptInput" placeholder="Example: Change the background to a blue sky."></textarea>
+            <button id="generateButton">Generate Image</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Generated Image</h2>
+            <p id="loadingMessage" style="display: none;">Generating image, please wait...</p>
+            <img id="generatedImage" src="#" alt="Generated image" style="display: none;">
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
+
